@@ -5,9 +5,10 @@
 **機能：**郵便番号を指定すると、**対応する住所**を取得できる。
 
 * リクエストとレスポンスのフォーマット
-**リクエスト(例)：**GET https://zipcloud.ibsnet.co.jp/api/search?zipcode=1000001
+**リクエスト(例)**
+`GET https://zipcloud.ibsnet.co.jp/api/search?zipcode=1000001`
 **レスポンス：**json(例)
-{
+`{
   "message": null,
   "results": [
     {
@@ -21,7 +22,7 @@
     }
   ],
   "status": 200
-}
+}`
 
 ### Q3-2. 各自で調査したAPIについて説明せよ。
 * APIの名称と参照URL
@@ -33,10 +34,10 @@
 **機能：**ポケモンの名前や図鑑番号などが取得できる。
 * リクエストとレスポンスのフォーマット
 **リクエスト(例)**
-GET https://pokeapi.co/api/v2/pokemon/25
+`GET https://pokeapi.co/api/v2/pokemon/25`
 
 **レスポンス**
-{
+`{
   "name": "pikachu",
   "sprites": {
     "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
@@ -44,7 +45,7 @@ GET https://pokeapi.co/api/v2/pokemon/25
   "types": [
     { "type": { "name": "electric" } }
   ]
-}
+}`
 
 ### Q3-3. 感想
 * 今回の課題で苦労したこと
