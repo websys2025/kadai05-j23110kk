@@ -5,17 +5,26 @@
 </head>
 <body>
     <h1 id="msg">何かのAPI</h1>
-    <form name="apiform"><p>
-        何かのフォーム：<input type="text" name="form_data">
-        <button type="button" id="btn1" onclick="some_api(this.form)">実行</button>
-    </p></form>
+    <button onclick="some_api()">ポケモンを表示</button>
     
     <div id="result"></div>
     <script>
-        async function some_api(myForm) {
-            // ここにコードを書く
-            document.getElementById("result").innerHTML += myForm.form_data.value+"<br />";
-            document.apiform.reset();
+        async function some_api() {
+            const maxID = 1010;
+            const randomID = Math.floor(Math.random() * maxID) + 1;
+            const api = `https://pokeapi.co/api/v2/pokemon/${randomID}/`;
+
+            const response = await fetch(api);
+            const data = await response.json();
+            const name_en = data.name;
+
+            const species_api = `https://pokeapi.co/api/v2/pokemon-species/${randomID}/`;
+            const species_response = await fetch(species_api);
+            const species_data = await species_response.json();
+
+            const name_ja = species_data.names.find(n => n.language.name === "ja").name;
+
+            document.getElementById("result").innerText = `ポケモン名: ${name_ja}`;
         }
     </script>
 </body>
