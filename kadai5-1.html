@@ -18,10 +18,10 @@
 
             const response = await fetch(`${endpoint}?zipcode=${myForm.zipcode.value}`);
             const data = await response.json();
-            const address = data.results[0];
-            const fullAddress = `${address.address1}${address.address2}${address.address3}`;
+            const result = data.results[0];
+            const address = result.address1 + result.address2 + result.address3;
             
-            document.getElementById("result").innerHTML =  myForm.zipcode.value; // 現状ではそのまま表示しているだけ
+            document.getElementById("result").innerHTML = "住所: " + address; // 現状ではそのまま表示しているだけ
         }
     </script>
 </body>
