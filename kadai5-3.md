@@ -8,7 +8,7 @@
 **リクエスト(例)**
 `GET https://zipcloud.ibsnet.co.jp/api/search?zipcode=1000001`
 
-**レスポンス：**json(例)
+**レスポンス(json(例))**
 `{
   "message": null,
   "results": [
